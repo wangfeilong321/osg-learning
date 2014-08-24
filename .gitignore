@@ -2,3 +2,5 @@
 *.osg
 examples
 .*.swp
+*.vim
+learn1
