@@ -12,11 +12,11 @@ int main()
 	osgViewer::Viewer viewer;
 	osg::ref_ptr<osg::Group> root = new osg::Group();
 
-	osg::ref_ptr<osg::Geode> cube = new osg::Geode();
-	osg::ref_ptr<osg::Geometry> cubeGeometry = new osg::Geometry();
+	osg::ref_ptr<osg::Geode> square = new osg::Geode();
+	osg::ref_ptr<osg::Geometry> squareGeometry = new osg::Geometry();
 
-	cube->addDrawable(cubeGeometry.get());
-	root->addChild(cube.get());
+	square->addDrawable(squareGeometry.get());
+	root->addChild(square.get());
 
 	osg::ref_ptr<osg::Vec3Array> sqVerts = new osg::Vec3Array();
 	sqVerts->push_back(osg::Vec3(-10.0f, 0.0f, -10.0f));
@@ -24,7 +24,7 @@ int main()
 	sqVerts->push_back(osg::Vec3(10.0f, 0.0f, 10.0f));
 	sqVerts->push_back(osg::Vec3(-1.0f, 0.0f, 1.0f));
 
-	cubeGeometry->setVertexArray(sqVerts.get());
+	squareGeometry->setVertexArray(sqVerts.get());
 
 	osg::ref_ptr<osg::Vec4Array> colors = new osg::Vec4Array();
 	colors->push_back(osg::Vec4(1.0f, 0.0f, 0.0f, 1.0f));
@@ -32,15 +32,15 @@ int main()
 	colors->push_back(osg::Vec4(0.0f, 0.0f, 1.0f, 1.0f));
 	colors->push_back(osg::Vec4(1.0f, 1.0f, 1.0f, 1.0f));
 
-	cubeGeometry->setColorArray(colors.get());
-	cubeGeometry->setColorBinding(osg::Geometry::BIND_PER_VERTEX);
+	squareGeometry->setColorArray(colors.get());
+	squareGeometry->setColorBinding(osg::Geometry::BIND_PER_VERTEX);
 
 	osg::ref_ptr<osg::Vec3Array> n = new osg::Vec3Array();
-	cubeGeometry->setNormalArray(n.get());
-	cubeGeometry->setNormalBinding(osg::Geometry::BIND_OVERALL);
+	squareGeometry->setNormalArray(n.get());
+	squareGeometry->setNormalBinding(osg::Geometry::BIND_OVERALL);
 	n->push_back(osg::Vec3(0.0f, -1.0f, 0.0f));
 
-	cubeGeometry->addPrimitiveSet(new osg::DrawArrays(osg::PrimitiveSet::QUADS, 0, 4));
+	squareGeometry->addPrimitiveSet(new osg::DrawArrays(osg::PrimitiveSet::QUADS, 0, 4));
 
 	root->getOrCreateStateSet()->setMode(GL_LIGHTING, osg::StateAttribute::OFF);
 
