@@ -19,10 +19,10 @@ int main()
 	root->addChild(square.get());
 
 	osg::ref_ptr<osg::Vec3Array> sqVerts = new osg::Vec3Array();
-	sqVerts->push_back(osg::Vec3(-10.0f, 0.0f, -10.0f));
-	sqVerts->push_back(osg::Vec3(1.0f, 0.0f, -1.0f));
-	sqVerts->push_back(osg::Vec3(10.0f, 0.0f, 10.0f));
-	sqVerts->push_back(osg::Vec3(-1.0f, 0.0f, 1.0f));
+	sqVerts->push_back(osg::Vec3(-10, 0, -10));
+	sqVerts->push_back(osg::Vec3(1, 0, -1.0f));
+	sqVerts->push_back(osg::Vec3(10, 0, 10));
+	sqVerts->push_back(osg::Vec3(-1, 0, 1));
 
 	squareGeometry->setVertexArray(sqVerts.get());
 
