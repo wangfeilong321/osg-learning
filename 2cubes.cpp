@@ -92,6 +92,13 @@ int main()
 	osg::ref_ptr<osg::Geode> cube = makeHead();
 	root->addChild(cube.get());
 	
+	osg::PositionAttitudeTransform* c2 = new osg::PositionAttitudeTransform();
+
+	root->addChild(c2);
+	c2->addChild(cube.get());
+	osg::Vec3 c2pos = osg::Vec3(20,0,0);
+	c2->setPosition(c2pos);
+
 	root->getOrCreateStateSet()->setMode(GL_LIGHTING, osg::StateAttribute::OFF);
 
 	if(root.valid())
