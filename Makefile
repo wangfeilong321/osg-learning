@@ -1,4 +1,4 @@
-all: learn1 cubeman 2cubes 2cubesMove textures
+all: learn1 cubeman 2cubes 2cubesMove 2dtextures 3dtextures
 
 learn1: learn1.cpp
 	g++ -o learn1 learn1.cpp -losg -losgViewer -losgGA
@@ -12,5 +12,11 @@ learn1: learn1.cpp
 cubeman: cubeman.cpp
 	g++ -o cubeman cubeman.cpp -losg -losgViewer -losgGA
 
-textures: textures.cpp
-	g++ -o textures textures.cpp -losg -losgViewer -losgGA -losgDB
+2dtextures: 2dtextures.cpp
+	g++ -o 2dtextures 2dtextures.cpp -losg -losgViewer -losgGA -losgDB
+
+3dtextures: 3dtextures.cpp
+	g++ -o 3dtextures 3dtextures.cpp -losg -losgViewer -losgGA -losgDB
+
+clean:
+	rm -f learn1 2cubes 2cubesMove cubeman 2dtextures 3dtextures
