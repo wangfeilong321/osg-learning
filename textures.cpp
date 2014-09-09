@@ -30,14 +30,16 @@ osg::ref_ptr<osg::Geode> makeHead()
 	cubeGeo->setVertexArray(cubeVerts.get());
 
 	osg::Vec2Array* texes = new osg::Vec2Array();
-	texes->push_back(osg::Vec2(0,0));
-	texes->push_back(osg::Vec2(0,0));
-	texes->push_back(osg::Vec2(0,0));
-	texes->push_back(osg::Vec2(0,0));
-	texes->push_back(osg::Vec2(0,0));
-	texes->push_back(osg::Vec2(0,0));
-	texes->push_back(osg::Vec2(0,0));
-	texes->push_back(osg::Vec2(0,0));
+	texes->push_back(osg::Vec2(0, 0));
+	texes->push_back(osg::Vec2(0, 1));
+	texes->push_back(osg::Vec2(1, 0));
+	texes->push_back(osg::Vec2(1, 1));
+	texes->push_back(osg::Vec2(0, 0));
+	texes->push_back(osg::Vec2(0, 1));
+	texes->push_back(osg::Vec2(1, 0));
+	texes->push_back(osg::Vec2(1, 1));
+
+	cubeGeo->setTexCoordArray(0, texes);
 
 	osg::DrawElementsUInt* top = new osg::DrawElementsUInt(osg::PrimitiveSet::QUADS, 0);
 	top->push_back(0);
