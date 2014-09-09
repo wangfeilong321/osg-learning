@@ -21,8 +21,6 @@ int main()
 
 	root->addChild(battle_dino);
 
-	root->getOrCreateStateSet()->setMode(GL_LIGHTING, osg::StateAttribute::OFF);
-
 	if(root.valid())
 	{	
 		osgViewer::Viewer viewer;
